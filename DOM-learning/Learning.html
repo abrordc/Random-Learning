@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>belajar dom</title>
+        <style>
+            *,
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                display: grid;
+                background-color: black;
+            }
+            .gabut {
+                display: flex;
+                place-items: center;
+                width: 400px;
+                height: 400px;
+                background-color: #fff;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                text-align: center;
+                justify-content: center;
+                font-size: 56px;
+                font-weight: bold;
+                font-family: Comic Sans MS;
+                margin-top: 20px;
+            }
+
+            button {
+                width: 150px;
+                justify-content: center;
+                height: 50px;
+                border: none;
+                margin: 0 auto;
+                background-color: #ccc;
+                transition: 0.5s;
+                margin-bottom: 15px;
+            }
+            button:hover {
+                font-weight: bold;
+                font-size: 24px;
+                color: #fff;
+                text-shadow: 2px 3px 2px black;
+                margin-top: 10px;
+                transition: 1s;
+                box-shadow:
+                    0 0 0 4px #fff,
+                    0 0 0 8px #4a98f7;
+            }
+            .red {
+                background-color: red;
+            }
+            .white {
+                background-color: white;
+            }
+            .abuabu {
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gabut">78 TH</div>
+        <button type="button" id="ubah" class="i">ubah</button>
+        <button type="button" id="stop">white</button>
+        <div class="toggle-switch">
+            <span class="switch"></span>
+        </div>
+        <script>
+            const gabut = document.querySelector(".gabut");
+            const ubah = document.querySelector("#ubah");
+
+            ubah.addEventListener("click", function () {
+                let data = prompt("masukkan 1.red 2.white 3.abuabu: ");
+                if (data === "") {
+                    gabut.style.display = "none";
+                    let h1 = document.createElement("p");
+                    let isi = document.createTextNode("siapa suruh gak di isi");
+                    h1.appendChild(isi);
+                    ubah.appendChild(h1);
+                     if (data === "") {
+                        let data = prompt("masukkan 1.red 2.white 3.abuabu: ");
+                    }
+                    return;
+                }
+                if (data || "red" || "white" || "abuabu") {
+                    ubah.innerText = `ubah : ${data}`;
+                    ubah.style.display = "none";
+                }
+                setTimeout(function () {
+                    alert(
+                        `di rubah menjadi warna ${data}, hati² mata Anda akan kedip²`
+                    );
+                    ubah.style.display = "block";
+                    setInterval(function () {
+                        gabut.classList.toggle(data);
+                    }, 100);
+                }, 1000);
+            });
+            const mode = document.querySelector("#stop");
+            mode.addEventListener("click", function () {
+                document.body.classList.toggle("white");
+                if (document.body.classList.contains("white")) {
+                    mode.innerText = "black";
+                } else {
+                    mode.innerText = "white";
+                }
+            });
+        </script>
+    </body>
+</html>

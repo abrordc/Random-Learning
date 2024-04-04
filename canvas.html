@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 canva</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="mycanvas"></canvas>
+    <script>
+      const mycanvas = document.querySelector("#mycanvas");
+      mycanvas.width = window.innerWidth;
+      mycanvas.height = window.innerHeight;
+      const c = mycanvas.getContext("2d");
+
+      c.fillStyle = "red";
+      c.strokeFill = "#999";
+      c.lineWidth = 3;
+      //     x   y    w    h
+      c.rect(50, 50, 300, 300);
+      c.fill();
+      c.stroke();
+
+      // Arc / lingkaran
+      //  x, y, radius,  suruh awal sudut akhir
+      let x = 200;
+      let y = 600;
+      let speedx = 10;
+      let speedY = 10;
+      let radius = 50;
+      function draw() {
+        window.requestAnimationFrame(draw);
+        c.clearRect(0, 0, innerWidth, innerHeight);
+        c.fillStyle = "blue";
+        c.beginPath();
+        c.arc(x, y, radius, 0, 2 * Math.PI);
+        c.fill();
+        c.stroke();
+        if (x + radius > innerWidth || x - radius < 0) {
+          speedx = -speedx;
+        }
+        if (y + radius > innerHeight || y - radius < 0) {
+          speedY = -speedY;
+        }
+        x += speedx;
+        y += speedY;
+      }
+      draw();
+      //path //
+      c.fillStyle = "green";
+      c.beginPath();
+      //      x, y
+      c.moveTo(350, 600);
+      c.lineTo(500, 350);
+      c.lineTo(750, 350);
+      c.lineTo(350, 600);
+      c.fill();
+      c.stroke();
+    </script>
+  </body>
+</html>

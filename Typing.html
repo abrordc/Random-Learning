@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>typing dcsquatit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 35px;
+      }
+      .kotak {
+        display: flex;
+        justify-content: center;
+        margin: 300px 0;
+      }
+      .mime {
+        color: red;
+        font-family: Gabarito, Sans-Serif;
+      }
+      .typing {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kotak">
+      <p><span class="mime">I`am </span><span class="typing"></span></p>
+    </div>
+  </body>
+
+  <script>
+    const mengetik = new Typed(".typing", {
+      strings: ["DemtimCod", "Full Stack", "Cyber Securty", "Abror Dc"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+    });
+  </script>
+</html>

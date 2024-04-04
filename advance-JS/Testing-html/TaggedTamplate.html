@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tagged tamplate</title>
+    <style>
+      .mjs {
+        background-color: skyblue;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: Monospace;
+      }
+      span {
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const nama = "moh.abroril huda";
+      const umur = 24;
+      const gmail = "demtimcod@gmail.com"
+      // rase parameter
+      function coba(string, ...values) {
+        console.log(...values)
+        // menggunakan foreach
+        //  let resuld = "";
+        //  string.forEach((str, i) =>{
+        //    resuld += `${str}${values[i] || ''}`;
+        //  })
+        //  return resuld
+        //reduce
+        return string.reduce(
+          (resuld, str, i) =>
+            `${resuld} ${str} <span class="mjs">${values[i] || ""}</span>`,
+          ""
+        );
+      }
+      const str = coba`nama saya ${nama}, umur saya ${umur} tahun, dan email saya ${gmail}`;
+      document.body.innerHTML = str;
+    </script>
+  </body>
+</html>

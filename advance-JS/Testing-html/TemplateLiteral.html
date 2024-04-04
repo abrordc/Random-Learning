@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>template literal</title>
+  </head>
+  <body>
+    <div class="tupukan"></div>
+    
+    
+    
+    
+    
+    <script>
+      const mhs = {
+        nama: "moh.abroril huda",
+        nim: "2022520045",
+        semester: 3,
+        universitas: "UNIVERSITAS MADURA",
+        matakuliah: [
+          "pemograman berbasis objeck",
+          "aljabar lenear",
+          "kalkulus",
+          "pemograman web",
+          "nahwu sorrof",
+          "fiqih",
+          "bulugul marom",
+          "intinya belajar"
+        ],
+      };
+      function Matakuliah(mata) {
+        return `<h3>mata kuliah : <h3>
+        <ol>
+        ${mata.map((mat) => `<li>${mat}</li>`).join("")}
+        </ol>`;
+      }
+
+      let el = `<div class="mhs">
+      <h1>${mhs.universitas}</h1>
+      <h3>Nama: ${mhs.nama}</h3>
+      <span>Nim : ${mhs.nim}</span>
+      <p>semester : ${mhs.semester}</p>
+      ${Matakuliah(mhs.matakuliah)}
+      </div>`;
+
+     const wadah = document.querySelector(".tupukan")
+     wadah.innerHTML = el;
+    </script>
+  </body>
+</html>

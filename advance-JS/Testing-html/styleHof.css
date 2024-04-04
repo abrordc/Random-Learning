@@ -1,0 +1,14 @@
+p {
+  font-size: 20px;
+}
+
+.totalD {
+  background-color: green;
+  padding: 5px;
+  color: #fff;
+}
+.totalV {
+  background-color: #ccc;
+  padding: 5px;
+  font-weight: bold;
+}
